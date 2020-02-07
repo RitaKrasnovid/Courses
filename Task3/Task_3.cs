@@ -19,25 +19,19 @@ namespace Task3
         static string FindMaxPalindrom(string text)                     // итого асимптотическая сложность алгоритма составляет O(n)
         {
             string[] splittedText = text.Split(' ', ',', '.');
-            int palindromLength = 0;
-            int maxLength = 0;
-            string palindrom = "";
+            //int palindromLength = 0;
+            //int maxLength = 0;
+            string longestPalindrom = "";
 
             foreach (var word in splittedText)                          // O(n)
             {
                 if (IsPalindrom(word))                                  // O(1)
                 {
-                    palindromLength = word.Length;
-                    maxLength = Math.Max(palindromLength, maxLength);
-
-                    if(maxLength == palindromLength)                    // O(1)
-                    {
-                        palindrom = word;
-                    }
+                    longestPalindrom = word.Length > longestPalindrom.Length ? word : longestPalindrom;
                 }
             }
 
-            return palindrom;
+            return longestPalindrom;
         }
 
         static bool IsPalindrom(string word)
