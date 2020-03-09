@@ -11,7 +11,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            int letterCounter = MaxLecsicSubstring("abaabc");     
+            int letterCounter = MaxLecsicSubstring("abaabcd");     
             Console.WriteLine("Max length - " + letterCounter);
             Console.ReadLine();
         }
@@ -23,13 +23,12 @@ namespace Algorithms
                 return 0;
             }
 
-            char[] charsFromString = inputString.ToCharArray();    // O(1)
             int letterCounter = 1;                                 // O(1)
             int result = 0;                                        // O(1)
 
-            for (int i = 1; i < charsFromString.Length; i++)       // O(n)
+            for (int i = 1; i < inputString.Length; i++)           // O(n)
             {
-                if (charsFromString[i] > charsFromString[i - 1])   // O(1)
+                if (inputString[i] > inputString[i - 1])           // O(1)
                 {
                     letterCounter++;
                 }

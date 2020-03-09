@@ -52,12 +52,12 @@ namespace Task2
                 if (!counterOnWords.TryGetValue(counter, out value))    // O(1)
                 {
                     SortedSet<string> words = new SortedSet<string>();
-                    words.Add(splittedText[i]);
-                    counterOnWords.Add(counter, words);
+                    words.Add(splittedText[i]);                         // O(log(n))
+                    counterOnWords.Add(counter, words);                 // O(1)
                 }
                 else
                 {
-                    value.Add(splittedText[i]);
+                    value.Add(splittedText[i]);                          // O(log(n))
                 }
 
                 maxCount = Math.Max(maxCount, counter);
@@ -76,7 +76,7 @@ namespace Task2
 
         static bool IsVowel(char letter)
         {
-            return vowels.Contains(letter);
+            return vowels.Contains(letter);                                // O(1)
         }
     }
 }

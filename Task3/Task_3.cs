@@ -19,8 +19,6 @@ namespace Task3
         static string FindMaxPalindrom(string text)                     // итого асимптотическая сложность алгоритма составляет O(n)
         {
             string[] splittedText = text.Split(' ', ',', '.');
-            //int palindromLength = 0;
-            //int maxLength = 0;
             string longestPalindrom = "";
 
             foreach (var word in splittedText)                          // O(n)
